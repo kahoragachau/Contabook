@@ -1,0 +1,40 @@
+{
+  "contacts":
+  [
+    {
+    "id": 1,
+    "firstname": "john",
+    "lastname": "doe",
+    "email": "johndoe@gmail.com",
+    "phone": "+254701234567"
+    },
+    {
+      "id": 2,
+      "firstname": "jane",
+      "lastname": "doe",
+      "email": "janedoe@gmail.com",
+      "phone": "+254701234567"
+      },
+      {
+        "id": 3,
+        "firstname": "james",
+        "lastname": "doe",
+        "email": "jamesdoe@gmail.com",
+        "phone": "+254701234567"
+      },
+      {
+        "id": 4,
+        "firstname": "janet",
+        "lastname": "doe",
+        "email": "janetdoe@gmail.com",
+        "phone": "+254701234567"
+      },
+      {
+        "id": 5,
+        "firstname": "jazz",
+        "lastname": "doe",
+        "email": "jazzdoe@gmail.com",
+        "phone": "+254701234567"
+      }
+]
+}
