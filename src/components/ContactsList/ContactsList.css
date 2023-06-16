@@ -1,0 +1,9 @@
+table{
+  border: 2px solid pink;
+}
+th{
+  border: 2px solid white;
+}
+td{
+  border: 2px solid rgb(122, 233, 196);
+}
