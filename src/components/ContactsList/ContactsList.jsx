@@ -1,11 +1,17 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./ContactsList.css";
 
 const ContactList = () => {
   const baseUrl = `http://localhost:3000/contacts`
+  const [contacts, setContacts] = useState([]);
 
-  const [contacts, setContacts] = useState([])
+  // const navigate = useNavigate();
+
+  // const handleEdit = () => {
+  //   navigate('/contact')
+  // }
 
   const getContacts = () => {
     axios.get(baseUrl).then((response) => {
@@ -24,6 +30,7 @@ const ContactList = () => {
               <td>{contact.lastname}</td>
               <td>{contact.email} </td>
               <td>{contact.phone} </td>
+
               <td><button>Edit</button></td>
               {/* handle Delete  */}
               <td><button onClick={() => {
