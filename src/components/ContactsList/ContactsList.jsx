@@ -7,11 +7,11 @@ const ContactList = () => {
   const baseUrl = `http://localhost:3000/contacts`
   const [contacts, setContacts] = useState([]);
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
-  // const handleEdit = () => {
-  //   navigate('/contact')
-  // }
+  const handleEdit = () => {
+    navigate('/contact')
+  }
 
   const getContacts = () => {
     axios.get(baseUrl).then((response) => {
@@ -30,8 +30,8 @@ const ContactList = () => {
               <td>{contact.lastname}</td>
               <td>{contact.email} </td>
               <td>{contact.phone} </td>
-
-              <td><button>Edit</button></td>
+              {/* Handle Edit */}
+              <td><button onClick={handleEdit}>Edit</button></td>
               {/* handle Delete  */}
               <td><button onClick={() => {
                 axios.delete(`${baseUrl}/${contact.id}`)
