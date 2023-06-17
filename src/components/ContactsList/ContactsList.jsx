@@ -1,20 +1,23 @@
 import { useEffect, useState } from "react";
+import axios from "axios";
 import "./ContactsList.css";
 
 const ContactList = () => {
+  const baseUrl = "http://localhost:3000/contacts"
+
   const [contacts, setContacts] = useState([])
 
-  const fetchContacts = () => {
-    fetch("http://localhost:3000/contacts")
-    .then(response => response.json())
-    .then(data => setContacts(data))
+  const getContacts = () => {
+    axios.get(baseUrl).then((response) => {
+      setContacts(response.data)
+    })
   }
 
   const tabulateContacts =
       contacts.map(contact => {
         return (
           <>
-            <tr>
+            <tr key={contact.id}>
               <td><input type="checkbox" name="" id="" /></td>
               <td>{contact.firstname}</td>
               <td>{contact.lastname}</td>
@@ -28,7 +31,7 @@ const ContactList = () => {
   })
 
   useEffect(()=>{
-    fetchContacts()
+    getContacts()
   }, [])
 
   return (
