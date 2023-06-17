@@ -3,7 +3,7 @@ import axios from "axios";
 import "./ContactsList.css";
 
 const ContactList = () => {
-  const baseUrl = "http://localhost:3000/contacts"
+  const baseUrl = `http://localhost:3000/contacts`
 
   const [contacts, setContacts] = useState([])
 
@@ -12,6 +12,7 @@ const ContactList = () => {
       setContacts(response.data)
     })
   }
+
 
   const tabulateContacts =
       contacts.map(contact => {
@@ -24,7 +25,12 @@ const ContactList = () => {
               <td>{contact.email} </td>
               <td>{contact.phone} </td>
               <td><button>Edit</button></td>
-              <td><button>Delete</button></td>
+              {/* handle Delete  */}
+              <td><button onClick={() => {
+                axios.delete(`${baseUrl}/${contact.id}`).then(() => {
+                  console.log("contact" +  contact.id + " Deleted")
+                })
+              }}>Delete</button></td>
             </tr>
           </>
         )
