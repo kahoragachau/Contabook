@@ -2,7 +2,7 @@
   "contacts": [
     {
       "id": 2,
-      "firstname": "jane",
+      "firstname": "Jane",
       "lastname": "doe",
       "email": "janedoe@gmail.com",
       "phone": "+254701234567"

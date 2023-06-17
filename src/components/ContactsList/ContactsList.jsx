@@ -27,9 +27,7 @@ const ContactList = () => {
               <td><button>Edit</button></td>
               {/* handle Delete  */}
               <td><button onClick={() => {
-                axios.delete(`${baseUrl}/${contact.id}`).then(() => {
-                  console.log("contact" +  contact.id + " Deleted")
-                })
+                axios.delete(`${baseUrl}/${contact.id}`)
               }}>Delete</button></td>
             </tr>
           </>
