@@ -9,7 +9,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<ContactList />} />
-          <Route path='/contact' element={<ContactItem />} />
+          <Route path='/contacts/:id' element={<ContactItem />} />
         </Routes>
       </BrowserRouter>
     </>

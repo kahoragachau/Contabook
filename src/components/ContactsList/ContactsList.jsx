@@ -9,9 +9,10 @@ const ContactList = () => {
 
   const navigate = useNavigate();
 
-  const handleEdit = () => {
-    navigate('/contact')
-  }
+  // const handleEdit = (id) => {
+  //   console.log(id)
+  //   // navigate(`/contact/${id}`)
+  // }
 
   const getContacts = () => {
     axios.get(baseUrl).then((response) => {
@@ -31,7 +32,9 @@ const ContactList = () => {
               <td>{contact.email} </td>
               <td>{contact.phone} </td>
               {/* Handle Edit */}
-              <td><button onClick={handleEdit}>Edit</button></td>
+              <td><button onClick={() => {
+                navigate(`/contacts/${contact.id}`)
+              }} >Edit</button></td>
               {/* handle Delete  */}
               <td><button onClick={() => {
                 axios.delete(`${baseUrl}/${contact.id}`)
