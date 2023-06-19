@@ -1,32 +1,40 @@
 {
   "contacts": [
     {
-      "id": 2,
+      "id": "1",
+      "firstname": "John",
+      "lastname": "Doe",
+      "email": "johndoe@gmail.com",
+      "phone": "+25471234567"
+    },
+    {
+      "{\"id\":\"2\",\"firstname\":\"jjane\"}": "",
+      "id": "2",
       "firstname": "Jane",
-      "lastname": "doe",
+      "lastname": "Doe",
       "email": "janedoe@gmail.com",
-      "phone": "+254701234567"
+      "phone": "2541234567"
     },
     {
-      "id": 3,
-      "firstname": "james",
-      "lastname": "doe",
+      "id": "3",
+      "firstname": "James",
+      "lastname": "Doe",
       "email": "jamesdoe@gmail.com",
-      "phone": "+254701234567"
+      "phone": "+25471234567"
     },
     {
-      "id": 4,
-      "firstname": "janet",
-      "lastname": "doe",
+      "id": "4",
+      "firstname": "Janet",
+      "lastname": "Doe",
       "email": "janetdoe@gmail.com",
-      "phone": "+254701234567"
+      "phone": "+25471234568"
     },
     {
-      "id": 5,
-      "firstname": "jazz",
-      "lastname": "doe",
-      "email": "jazzdoe@gmail.com",
-      "phone": "+254701234567"
+      "id": "5",
+      "firstname": "John",
+      "lastname": "Doe",
+      "email": "johndoe@gmail.com",
+      "phone": "+25471234567"
     }
   ]
 }
