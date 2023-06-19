@@ -27,7 +27,7 @@ const ContactItem = () => {
   const handleUpdate = (event) => {
     event.preventDefault();
     axios.put(`http://localhost:3000/contacts/${id}`, updateContact)
-    // navigate("/")
+    navigate("/")
   }
 
   return (
