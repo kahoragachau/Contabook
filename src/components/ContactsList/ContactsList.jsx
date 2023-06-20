@@ -16,7 +16,7 @@ const ContactList = () => {
   }
 
   const handleCreate = () => {
-    
+    navigate('/create')
   }
 
   const tabulateContacts =
