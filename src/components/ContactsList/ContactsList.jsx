@@ -9,17 +9,15 @@ const ContactList = () => {
 
   const navigate = useNavigate();
 
-  // const handleEdit = (id) => {
-  //   console.log(id)
-  //   // navigate(`/contact/${id}`)
-  // }
-
   const getContacts = () => {
     axios.get(baseUrl).then((response) => {
       setContacts(response.data)
     })
   }
 
+  const handleCreate = () => {
+    
+  }
 
   const tabulateContacts =
       contacts.map(contact => {
@@ -51,6 +49,7 @@ const ContactList = () => {
   return (
     <>
       <h1>ContactList Works!</h1>
+      <button onClick={handleCreate}>Create Contact</button>
       <table>
         <tr>
           <th> </th>
