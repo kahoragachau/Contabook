@@ -6,6 +6,7 @@ import "./ContactsList.css";
 const ContactList = () => {
   const baseUrl = `http://localhost:3000/contacts`
   const [contacts, setContacts] = useState([]);
+  const [searchText, setSearchText] = useState("")
 
   const navigate = useNavigate();
 
