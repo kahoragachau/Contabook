@@ -20,13 +20,12 @@ const ContactList = () => {
     navigate('/create')
   }
 
-  const handleSearch = (e) => {
-    console.log(e.target.value)
-    // alert("Search")
-  }
+  const filterContacts = contacts?.filter(contact => {
+    return JSON.stringify(contact).toLowerCase().includes(searchText.toLowerCase())
+  })
 
   const tabulateContacts =
-      contacts.map(contact => {
+      filterContacts.map(contact => {
         return (
           <>
             <tr key={contact.id}>
@@ -57,7 +56,7 @@ const ContactList = () => {
       <h1>ContactList Works!</h1>
       <button onClick={handleCreate}>Create Contact</button>
       <br />
-      <input type="text" placeholder="Search Contact" onChange={handleSearch}/>
+      <input type="text" placeholder="Search Contact" onChange={(e) => setSearchText(e.target.value)}/>
       <br />
       <br />
       <table>
