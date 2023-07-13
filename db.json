@@ -5,15 +5,7 @@
       "firstname": "John",
       "lastname": "Doe",
       "email": "johndoe@gmail.com",
-      "phone": "+25471234567"
-    },
-    {
-      "{\"id\":\"2\",\"firstname\":\"jjane\"}": "",
-      "id": "2",
-      "firstname": "Jane",
-      "lastname": "Doe",
-      "email": "janedoe@gmail.com",
-      "phone": "2541234567"
+      "phone": "+25471234568"
     },
     {
       "id": "3",
