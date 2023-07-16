@@ -1,7 +1,8 @@
 import './CreateContact.css'
 import axios from 'axios';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Form, useNavigate } from 'react-router-dom';
+import { Input, FormControl, FormLabel, FormErrorMessage, FormHelperText, Button } from '@chakra-ui/react';
 
 
 const CreateContact = () => {
@@ -21,41 +22,48 @@ const CreateContact = () => {
   }
   return (
     <>
-      <h1>Create Contact Works!!</h1>
+      <h1>Create a new Contact</h1>
+      <br />
       <form onSubmit={handleCreate}>
-        <label htmlFor="firstname">First Name: </label> 
-        <input 
+        <FormControl>
+          <FormLabel>First Name</FormLabel>
+          <Input 
           type="text"
           onChange={(e) => {
             setFormData({...formData, firstname:e.target.value})
           }}
         />
-        <br />
-        <label htmlFor="lastname">Last Name: </label>
-        <input 
-          type="text" 
+        </FormControl>
+        <FormControl>
+          <FormLabel>Last Name</FormLabel>
+          <Input 
+          type="text"
           onChange={(e) => {
             setFormData({...formData, lastname:e.target.value})
           }}
         />
-        <br />
-        <label htmlFor="email">Email: </label>
-        <input 
-          type="text" 
+        </FormControl>
+
+        <FormControl>
+        <FormLabel>Email</FormLabel>
+        <Input 
+          type="email"
           onChange={(e) => {
             setFormData({...formData, email:e.target.value})
           }}
         />
-        <br />
-        <label htmlFor="phone">Phone: </label>
-        <input 
-          type="text"  
+        </FormControl>
+        <FormControl>
+          <FormLabel>Phone</FormLabel>
+          <Input 
+          type="text"
           onChange={(e) => {
             setFormData({...formData, phone:e.target.value})
-          }} 
+          }}
         />
+        </FormControl>
         <br />
-        <button type="submit">Add</button>
+        <Button colorScheme='teal' w="120px" type="submit">Add Contact</Button>
       </form>
     </>
   )
