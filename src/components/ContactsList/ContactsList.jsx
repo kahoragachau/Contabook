@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Button, Input ,Table, Thead, Tbody, Tr, Th, Td, TableCaption, TableContainer } from "@chakra-ui/react";
 import axios from "axios";
 import "./ContactsList.css";
 
@@ -28,21 +29,21 @@ const ContactList = () => {
       filterContacts.map(contact => {
         return (
           <>
-            <tr key={contact.id}>
-              <td><input type="checkbox" name="" id="" /></td>
-              <td>{contact.firstname}</td>
-              <td>{contact.lastname}</td>
-              <td>{contact.email} </td>
-              <td>{contact.phone} </td>
+            <Tr key={contact.id}>
+              {/* <Td><input type="checkbox" name="" id="" /></Td> */}
+              <Td>{contact.firstname}</Td>
+              <Td>{contact.lastname}</Td>
+              <Td>{contact.email} </Td>
+              <Td>{contact.phone} </Td>
               {/* Handle Edit */}
-              <td><button onClick={() => {
+              {/* <Td><button onClick={() => {
                 navigate(`/contacts/${contact.id}`)
-              }} >Edit</button></td>
+              }} >Edit</button></Td> */}
               {/* handle Delete  */}
-              <td><button onClick={() => {
+              {/* <Td><button onClick={() => {
                 axios.delete(`${baseUrl}/${contact.id}`)
-              }}>Delete</button></td>
-            </tr>
+              }} >Delete</button></Td> */}
+            </Tr>
           </>
         )
   })
@@ -53,24 +54,30 @@ const ContactList = () => {
 
   return (
     <>
-      <h1>ContactList Works!</h1>
-      <button onClick={handleCreate}>Create Contact</button>
+      <Button colorScheme="teal" onClick={handleCreate} mb="6">Create Contact</Button>
       <br />
-      <input type="text" placeholder="Search Contact" onChange={(e) => setSearchText(e.target.value)}/>
+      <Input type="text" placeholder="Search Contact" onChange={(e) => setSearchText(e.target.value)}/>
       <br />
       <br />
-      <table>
-        <tr>
-          <th> </th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Email</th>
-          <th>Phone</th>
-          <th> </th>
-          <th> </th>
-        </tr>
-        {tabulateContacts}
-      </table>
+      <TableContainer>
+        <Table variant="striped" colorScheme="blue">
+          <TableCaption placement="top">Your Contact List</TableCaption>
+          <Thead>
+            <Tr>
+              {/* <Th></Th> */}
+              <Th>First Name</Th>
+              <Th>Last Name</Th>
+              <Th>Email</Th>
+              <Th>Phone</Th>
+              {/* <Th></Th>
+              <Th></Th> */}
+            </Tr>
+          </Thead>
+          <Tbody>
+            {tabulateContacts}
+          </Tbody>
+        </Table>
+      </TableContainer>
     </>
   )
 }
