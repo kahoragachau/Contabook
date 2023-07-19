@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Button, Input ,Table, Thead, Tbody, Tr, Th, Td, TableCaption, TableContainer } from "@chakra-ui/react";
+import { Button, Input ,Table, Thead, Tbody, Tr, Th, Td, TableCaption, TableContainer, Tfoot } from "@chakra-ui/react";
 import axios from "axios";
 import "./ContactsList.css";
 
@@ -9,6 +9,12 @@ const ContactList = () => {
   const [contacts, setContacts] = useState([]);
   const [searchText, setSearchText] = useState("")
   const [isHovering, setIsHovering] = useState(false)
+
+  const getContacts = () => {
+    axios.get(baseUrl).then((response) => {
+      setContacts(response.data)
+    })
+  }
 
   const handleMouseOver = () => {
     setIsHovering(true);
@@ -19,12 +25,6 @@ const ContactList = () => {
   }
 
   const navigate = useNavigate();
-
-  const getContacts = () => {
-    axios.get(baseUrl).then((response) => {
-      setContacts(response.data)
-    })
-  }
 
   const handleCreate = () => {
     navigate('/create')

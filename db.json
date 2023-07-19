@@ -1,27 +1,6 @@
 {
   "contacts": [
     {
-      "id": "1",
-      "firstname": "John",
-      "lastname": "Doe",
-      "email": "johndoe@gmail.com",
-      "phone": "+25471234568"
-    },
-    {
-      "id": "3",
-      "firstname": "James",
-      "lastname": "Doe",
-      "email": "jamesdoe@gmail.com",
-      "phone": "+25471234567"
-    },
-    {
-      "id": "4",
-      "firstname": "Janet",
-      "lastname": "Doe",
-      "email": "janetdoe@gmail.com",
-      "phone": "+25471234568"
-    },
-    {
       "firstname": "Timothy",
       "lastname": "Wamae",
       "email": "timwamae123@gmail.com",
@@ -55,6 +34,62 @@
       "email": "joanmuthoni@gmail.com",
       "phone": "+23457884389339",
       "id": "mxnbtJI"
+    },
+    {
+      "firstname": "chrissy",
+      "lastname": "kim",
+      "email": "kriskim@gmail.com",
+      "phone": "+2312344",
+      "id": "BKzOi9G"
+    },
+    {
+      "firstname": "kris",
+      "lastname": "kim",
+      "email": "kimkris@gmail.com",
+      "phone": "+254712345600",
+      "id": "gF0bbld"
+    },
+    {
+      "firstname": "new",
+      "lastname": "fria",
+      "email": "frianew@gmail.com",
+      "phone": "+24311",
+      "id": "PMjQNCu"
+    },
+    {
+      "firstname": "fra",
+      "lastname": "frie",
+      "email": "frafrie@gmail.com",
+      "phone": "+243433232",
+      "id": "NeUMZQL"
+    },
+    {
+      "firstname": "bre",
+      "lastname": "bres",
+      "email": "nrenre@gmail.com",
+      "phone": "+231",
+      "id": "KNMtZBk"
+    },
+    {
+      "firstname": "nec",
+      "lastname": "cen",
+      "email": "cennec@gmail.com",
+      "phone": "+23453",
+      "id": "lzb_9yK"
+    },
+    {
+      "firstname": "fed",
+      "lastname": "def",
+      "email": "feddef@gmail.com",
+      "phone": "+234",
+      "id": "BNEOQxo"
+    },
+    {
+      "firstname": "John",
+      "lastname": "Doe",
+      "email": "johndoe@gmail.com",
+      "phone": "+254",
+      "id": "ubrPPnL"
     }
   ]
 }

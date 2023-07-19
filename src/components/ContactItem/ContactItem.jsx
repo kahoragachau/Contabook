@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { Button, Input, FormControl, FormLabel, FormErrorMessage, FormHelperText } from "@chakra-ui/react";
+import { Button, Input, FormControl, FormLabel,  useToast} from "@chakra-ui/react";
 
 const ContactItem = () => {
   const [updateContact, setUpdateContact] = useState({
@@ -15,6 +15,7 @@ const ContactItem = () => {
 
   const {id} = useParams()
   const navigate = useNavigate()
+  const toast = useToast();
 
   const getContacts = () => {
     axios.get(`http://localhost:3000/contacts/${id}`)
@@ -28,7 +29,15 @@ const ContactItem = () => {
   const handleUpdate = (event) => {
     event.preventDefault();
     axios.put(`http://localhost:3000/contacts/${id}`, updateContact)
-    navigate("/")
+    toast({
+      title: 'Contact Updated!!',
+      status: 'warning',
+      duration: 600,
+      isClosable: true
+    })
+    setTimeout(()=> {
+      navigate("/")
+    }, 1000)
   }
 
   return (
@@ -66,7 +75,7 @@ const ContactItem = () => {
           />
         </FormControl>
         <br />
-        <Button colorScheme="orange" type="submit">Update</Button>
+        <Button colorScheme="orange" type="submit">Update Contact</Button>
       </form>
     </>
   )

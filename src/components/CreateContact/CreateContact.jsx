@@ -1,8 +1,8 @@
 import './CreateContact.css'
 import axios from 'axios';
 import { useState } from 'react';
-import { Form, useNavigate } from 'react-router-dom';
-import { Input, FormControl, FormLabel, FormErrorMessage, FormHelperText, Button } from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom';
+import { Input, FormControl, FormLabel, Button, useToast } from '@chakra-ui/react';
 
 
 const CreateContact = () => {
@@ -15,10 +15,17 @@ const CreateContact = () => {
 
 
   const navigate = useNavigate();
+  const toast = useToast();
 
   const handleCreate = () => {
     axios.post(` http://localhost:3000/contacts`, formData)
-    navigate('/')
+    toast({
+      title: 'Contact Added!!',
+      status: 'success',
+      duration: 1000,
+      isClosable: true
+    })
+    navigate("/")
   }
   return (
     <>
