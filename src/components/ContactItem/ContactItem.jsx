@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { Button, Input, FormControl, FormLabel, FormErrorMessage, FormHelperText } from "@chakra-ui/react";
 
 const ContactItem = () => {
   const [updateContact, setUpdateContact] = useState({
@@ -32,37 +33,40 @@ const ContactItem = () => {
 
   return (
     <>
-      <h1>Contact Item Works</h1>
+      <h1>Edit Contact</h1>
       <form onSubmit={handleUpdate}>
-        <label htmlFor="firstname">First Name: </label> 
-        <input 
-          type="text" 
-          value={updateContact.firstname} 
-          onChange={(e) => setUpdateContact({...updateContact, firstname:e.target.value})}
-        />
+        <FormControl>
+          <FormLabel>First Name</FormLabel>
+          <Input type="text" value={updateContact.firstname} 
+          onChange={(e) => setUpdateContact({...updateContact, firstname:e.target.value})}/>
+        </FormControl>
+        <FormControl>
+          <FormLabel htmlFor="lastname">Last Name: </FormLabel>
+          <Input 
+            type="text" 
+            value={updateContact.lastname}
+            onChange={(e) => setUpdateContact({...updateContact, lastname:e.target.value})} 
+          />
+        </FormControl>
+        <FormControl>
+          <FormLabel htmlFor="email">Email: </FormLabel>
+          <Input 
+            type="text" 
+            value={updateContact.email} 
+            onChange={(e) => setUpdateContact({...updateContact, email:e.target.value})}
+          />
+        </FormControl>
+
+        <FormControl>
+          <FormLabel htmlFor="phone">Phone: </FormLabel>
+          <Input 
+            type="text"   
+            value={updateContact.phone}
+            onChange={(e) => setUpdateContact({...updateContact, phone:e.target.value})}
+          />
+        </FormControl>
         <br />
-        <label htmlFor="lastname">Last Name: </label>
-        <input 
-          type="text" 
-          value={updateContact.lastname}
-          onChange={(e) => setUpdateContact({...updateContact, lastname:e.target.value})} 
-        />
-        <br />
-        <label htmlFor="email">Email: </label>
-        <input 
-          type="text" 
-          value={updateContact.email} 
-          onChange={(e) => setUpdateContact({...updateContact, email:e.target.value})}
-        />
-        <br />
-        <label htmlFor="phone">Phone: </label>
-        <input 
-          type="text"   
-          value={updateContact.phone}
-          onChange={(e) => setUpdateContact({...updateContact, phone:e.target.value})}
-        />
-        <br />
-        <button type="submit">Update</button>
+        <Button colorScheme="orange" type="submit">Update</Button>
       </form>
     </>
   )
