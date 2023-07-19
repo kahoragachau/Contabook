@@ -8,6 +8,15 @@ const ContactList = () => {
   const baseUrl = `http://localhost:3000/contacts`
   const [contacts, setContacts] = useState([]);
   const [searchText, setSearchText] = useState("")
+  const [isHovering, setIsHovering] = useState(false)
+
+  const handleMouseOver = () => {
+    setIsHovering(true);
+  }
+
+  const handleMouseOut = () => {
+    setIsHovering(false);
+  }
 
   const navigate = useNavigate();
 
@@ -29,20 +38,23 @@ const ContactList = () => {
       filterContacts.map(contact => {
         return (
           <>
-            <Tr key={contact.id}>
-              {/* <Td><input type="checkbox" name="" id="" /></Td> */}
+            <Tr key={contact.id} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
               <Td>{contact.firstname}</Td>
               <Td>{contact.lastname}</Td>
               <Td>{contact.email} </Td>
               <Td>{contact.phone} </Td>
-              {/* Handle Edit */}
-              {/* <Td><button onClick={() => {
+              {isHovering && (
+              <>
+              <Td><input type="checkbox" name="" id="" /></Td>
+              <Td><Button colorScheme="teal" onClick={() => {
                 navigate(`/contacts/${contact.id}`)
-              }} >Edit</button></Td> */}
-              {/* handle Delete  */}
-              {/* <Td><button onClick={() => {
+              }} >Edit</Button></Td>
+              <Td><Button colorScheme="red" onClick={() => {
                 axios.delete(`${baseUrl}/${contact.id}`)
-              }} >Delete</button></Td> */}
+              }} >Delete</Button></Td>
+              </>
+               
+            )}
             </Tr>
           </>
         )
